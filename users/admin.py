@@ -21,10 +21,6 @@ from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
 
-# Local application imports
-from .forms import CustomUserCreationForm, CustomUserChangeForm
-from .models import CustomUser
-
 
 # Class CustomUserAdmin gives power to create, modify, and delete users
 class CustomUserAdmin(UserAdmin):
