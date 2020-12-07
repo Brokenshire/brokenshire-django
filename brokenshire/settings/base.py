@@ -41,12 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    
 
     # Third-Party
     'allauth', 
     'allauth.account', 
     'allauth.socialaccount', 
     'allauth.socialaccount.providers.google',
+    'social_app',
     'crispy_forms',
     'debug_toolbar',
 
@@ -148,24 +150,38 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Enabled for django-debug-toolbar to work
 # https://docs.djangoproject.com/en/2.2/ref/settings/#internal-ips
+
 INTERNAL_IPS = ['127.0.0.1']
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-# Django-Allauth Config
 
-LOGIN_REDIRECT_URL = 'home'
-ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
+# Google auth
 
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
 )
 
-SITE_ID = 1
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
 
+# Django-Allauth Config
+
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_REDIRECT_URL = 'home'
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 ACCOUNT_USERNAME_REQUIRED = False
