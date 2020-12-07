@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'allauth.account', 
     'allauth.socialaccount', 
     'allauth.socialaccount.providers.google',
-    'social_app',
     'crispy_forms',
     'debug_toolbar',
 
