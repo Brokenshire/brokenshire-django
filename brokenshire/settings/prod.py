@@ -13,7 +13,6 @@
 # limitations under the License.
 
 # Third-party imports
-from brokenshire.settings.dev import DATABASES
 import django_heroku
 import dj_database_url
 
@@ -30,6 +29,13 @@ ALLOWED_HOSTS = [
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'brokenshire',
+    }
+}
 
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)

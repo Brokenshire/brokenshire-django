@@ -14,16 +14,11 @@
 
 # Local imports
 from .base import *
-
-# Third-party imports
 from dotenv import load_dotenv
 
-
 try:
-    # Load the .env file containing local environment variables
     load_dotenv()
-    
-    if os.getenv('DEVELOPMENT') == 'true':
-        from .dev import *
+    DJANGO_DEVELOPMENT = os.getenv('DJANGO_DEVELOPMENT')
+    from .dev import * 
 except:
     from .prod import *
