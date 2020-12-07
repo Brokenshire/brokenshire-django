@@ -32,7 +32,10 @@ ALLOWED_HOSTS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'brokenshire',
+        'NAME': 'd8brjb1q368gku',
+        'USER': 'oapsvgfvggziaq',
+        'PASSWORD': 'PASSWORD',
+        'HOST': 'ec2-54-236-122-55.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
