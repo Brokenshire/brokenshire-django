@@ -31,7 +31,6 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 ALLOWED_HOSTS = [
     'brokenshire.herokuapp.com',
     'www.brokenshire.herokuapp.com',
-    '127.0.0.1'
 ]
 
 

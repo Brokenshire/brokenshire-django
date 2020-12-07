@@ -22,5 +22,10 @@ import django_heroku
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+
+ALLOWED_HOSTS = [
+    '127.0.0.1'
+]
+
 # Activate Django-Heroku.
 django_heroku.settings(locals())
