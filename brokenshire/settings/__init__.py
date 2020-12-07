@@ -18,11 +18,12 @@ from .base import *
 # Third-party imports
 from dotenv import load_dotenv
 
-# Load the .env file containing local environment variables
-load_dotenv()
 
-# SECURITY WARNING: keep the secret key used in production secret!
-if os.getenv('DEVELOPMENT') == 'true':
-    from .dev import *
-else:
+try:
+    # Load the .env file containing local environment variables
+    load_dotenv()
+    
+    if os.getenv('DEVELOPMENT') == 'true':
+        from .dev import *
+except:
     from .prod import *
