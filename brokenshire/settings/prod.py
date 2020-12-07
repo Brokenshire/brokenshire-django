@@ -12,9 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Local imports
-from .base import *
-
 # Third-party imports
 import django_heroku
 
@@ -36,9 +33,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'brokenshire',
-        'USER': 'postgres',
-        'PASSWORD': os.getenv('PASSWORD'),
-        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }

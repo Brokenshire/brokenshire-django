@@ -12,10 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Local imports
-from .base import *
-
-
 # Third-party imports
 from dotenv import load_dotenv
 
