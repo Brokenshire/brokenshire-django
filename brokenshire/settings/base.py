@@ -15,23 +15,9 @@
 # Local imports
 import os
 
-# Third-party imports
-from dotenv import load_dotenv
-
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# Load the .env file containing local environment variables
-load_dotenv()
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
-
-ALLOWED_HOSTS = [
-    'brokenshire.herokuapp.com',
-    'www.brokenshire.herokuapp.com',
-]
 
 
 # Application definition
@@ -89,21 +75,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'brokenshire.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'brokenshire',
-        'USER': 'postgres',
-        'PASSWORD': os.getenv('PASSWORD'),
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
 
 
 # Password validation

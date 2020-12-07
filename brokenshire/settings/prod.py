@@ -24,8 +24,24 @@ DEBUG = False
 
 
 ALLOWED_HOSTS = [
-    '127.0.0.1'
+    'brokenshire.herokuapp.com',
+    'www.brokenshire.herokuapp.com',
 ]
+
+
+# Database
+# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'brokenshire',
+        'USER': 'postgres',
+        'PASSWORD': os.getenv('PASSWORD'),
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
