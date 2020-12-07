@@ -13,7 +13,9 @@
 # limitations under the License.
 
 # Third-party imports
+from brokenshire.settings.dev import DATABASES
 import django_heroku
+import dj_database_url
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -29,16 +31,8 @@ ALLOWED_HOSTS = [
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd8brjb1q368gku',
-        'USER': 'oapsvgfvggziaq',
-        'PASSWORD': 'PASSWORD',
-        'HOST': 'ec2-54-236-122-55.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
-}
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
