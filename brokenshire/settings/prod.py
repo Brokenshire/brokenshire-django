@@ -14,7 +14,6 @@
 
 # Third-party imports
 import django_heroku
-import dj_database_url
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -37,8 +36,6 @@ DATABASES = {
     }
 }
 
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
