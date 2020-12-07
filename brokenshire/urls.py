@@ -16,6 +16,7 @@
 from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
+from django.views.generic import TemplateView
 
 
 # URL paths for whole website
@@ -26,6 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # User management
+    path('', TemplateView.as_view(template_name='templates/pages/home.html')),
     path('users/', include('django.contrib.auth.urls')),
     path('accounts/', include('allauth.urls')),
 ]
