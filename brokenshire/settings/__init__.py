@@ -12,11 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Local imports
 from .base import *
 
-try:
-    print("Trying import dev.py settings...")
+# Third-party imports
+from dotenv import load_dotenv
+
+# Load the .env file containing local environment variables
+load_dotenv()
+
+# SECURITY WARNING: keep the secret key used in production secret!
+if os.getenv('DEVELOPMENT') == 'true':
     from .dev import *
-except ImportError:
-    print("Trying import prod.py settings...")
+else:
     from .prod import *
