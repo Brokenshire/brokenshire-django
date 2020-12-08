@@ -16,10 +16,12 @@
 from .base import *
 from dotenv import load_dotenv
 
-
-load_dotenv()
-DJANGO_DEVELOPMENT = os.getenv('DJANGO_DEVELOPMENT')
-if DJANGO_DEVELOPMENT is not None:
-    from .dev import * 
-else:
+try:
+    load_dotenv()
+    DJANGO_DEVELOPMENT = os.getenv('DJANGO_DEVELOPMENT')
+    if DJANGO_DEVELOPMENT is not None:
+        from .dev import * 
+    else:
+        from .prod import *
+except:
     from .prod import *
