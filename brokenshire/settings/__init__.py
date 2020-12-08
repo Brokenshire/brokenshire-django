@@ -19,7 +19,12 @@ try:
     import os
     from dotenv import load_dotenv
     load_dotenv()
-    if os.getenv('PRODUCTION') is False:
+    if os.getenv('PRODUCTION') == 'false':
+        print("Loading dev settings")
         from .dev import *
+    else:
+        print("Loading production settings")
+        from .prod import *
 except:
+    print("Loading production settings")
     from .prod import *
