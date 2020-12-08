@@ -12,8 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Local imports
+import os
+
 # Third-party imports
 import django_heroku
+import dj_database_url
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -34,11 +38,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'd8brjb1q368gku',
         'USER': 'oapsvgfvggziaq',
-        'PASSWORD': 'PASSWORD',
+        'PASSWORD': os.environ.get('PASSWORD'),
         'HOST': 'ec2-54-236-122-55.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
+
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 
 # Activate Django-Heroku.
