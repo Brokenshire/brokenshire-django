@@ -1,0 +1,6 @@
+body { 
+    background: url("/static/images/rome.4ab4b527d3e4.jpg") no-repeat center center fixed; 
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+  }
