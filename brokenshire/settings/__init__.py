@@ -15,13 +15,7 @@
 # Local imports
 from .base import *
 
-try:
-    from dotenv import load_dotenv
-    load_dotenv()
-    DJANGO_DEVELOPMENT = os.getenv('DJANGO_DEVELOPMENT')
-    if DJANGO_DEVELOPMENT is not None:
-        from .dev import * 
-    else:
-        from .prod import *
-except:
+if os.environ['PROJECT_SETTING'] == 'prod':
     from .prod import *
+else:
+    from .dev import *
