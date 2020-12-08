@@ -13,11 +13,9 @@
 # limitations under the License.
 
 # Local imports
-import os
 from .base import *
 
 try:
-    if os.environ['PROJECT_SETTING'] == 'prod':
-        from .prod import *
+    from .prod import *
 except:
     from .dev import *
