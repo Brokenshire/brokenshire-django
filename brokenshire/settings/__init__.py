@@ -16,7 +16,12 @@
 from .base import *
 
 try:
-    if os.environ['PRODUCTION'] is True:
+    import os
+    from dotenv import load_dotenv
+    load_dotenv()
+    if os.getenv('PRODUCTION') is True:
         from .prod import *
+    else:
+        from .dev import *
 except:
     from .dev import *

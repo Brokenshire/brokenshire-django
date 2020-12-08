@@ -15,9 +15,15 @@
 # Local import
 import os
 
+# Third-party imports
+from dotenv import load_dotenv
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+# Load .env file codes
+load_dotenv()
 
 
 ALLOWED_HOSTS = [
@@ -35,7 +41,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'brokenshire',
         'USER': 'postgres',
-        'PASSWORD': os.environ['PASSWORD'],
+        'PASSWORD': os.getenv('PASSWORD'),
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -43,4 +49,4 @@ DATABASES = {
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.getenv('SECRET_KEY')
