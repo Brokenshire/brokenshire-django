@@ -13,7 +13,6 @@
 # limitations under the License.
 
 # Local imports
-import os
 from .base import *
 
 try:
