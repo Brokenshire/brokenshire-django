@@ -19,9 +19,7 @@ try:
     import os
     from dotenv import load_dotenv
     load_dotenv()
-    if os.getenv('PRODUCTION') is True:
-        from .prod import *
-    else:
+    if os.getenv('PRODUCTION') is False:
         from .dev import *
 except:
-    from .dev import *
+    from .prod import *
