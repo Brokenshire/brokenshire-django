@@ -1,1 +1,1 @@
-web: gunicorn brokenshire.wsgi:application --log-file -
+web: gunicorn brokenshire.wsgi --log-file -
