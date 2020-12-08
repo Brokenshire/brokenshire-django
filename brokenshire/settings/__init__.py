@@ -15,7 +15,8 @@
 # Local imports
 from .base import *
 
-if os.environ['PROJECT_SETTING'] == 'prod':
-    from .prod import *
-else:
+try:
+    if os.environ['PROJECT_SETTING'] == 'prod':
+        from .prod import *
+except:
     from .dev import *
