@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Local import
-import os
+from .base import *
 
 # Third-party imports
 from dotenv import load_dotenv
