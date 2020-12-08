@@ -14,9 +14,9 @@
 
 # Local imports
 from .base import *
-from dotenv import load_dotenv
 
 try:
+    from dotenv import load_dotenv
     load_dotenv()
     DJANGO_DEVELOPMENT = os.getenv('DJANGO_DEVELOPMENT')
     if DJANGO_DEVELOPMENT is not None:
