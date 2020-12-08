@@ -22,7 +22,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'brokenshire.herokuapp.com',
-    'www.brokenshire.herokuapp.com',
 ]
 
 
