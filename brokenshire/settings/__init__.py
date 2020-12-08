@@ -13,9 +13,11 @@
 # limitations under the License.
 
 # Local imports
+import os
 from .base import *
 
 try:
-    from .prod import *
+    if os.environ['PRODUCTION'] is True:
+        from .prod import *
 except:
     from .dev import *
